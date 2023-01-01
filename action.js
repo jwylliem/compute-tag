@@ -102,6 +102,9 @@ async function latestTagForBranch(allTags, branch) {
     .paginate(options, (response, done) => {
       console.log("+++++++++++++++++++++++++++++++++++++++++++++++++")
       for (const commit of response.data) {
+        console.log("#############################")
+        console.log(`tag: ${tag}`)
+        console.log(`tag_sha: ${tag} commit_sha: ${commit.sha}`)
         if (allTags.find((tag) => tag.object.sha === commit.sha)) {
           core.info('Finished fetching commits, found a tag match.')
           done()
