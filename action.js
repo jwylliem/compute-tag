@@ -93,13 +93,14 @@ async function latestTagForBranch(allTags, branch) {
     ...requestOpts,
     sha: branch,
   })
-
+q
   core.info(
     `Fetching commits for ref ${branch}. This may take a while on large repositories.`
   )
 
   return await gitClient
     .paginate(options, (response, done) => {
+      console.log("+++++++++++++++++++++++++++++++++++++++++++++++++")
       for (const commit of response.data) {
         if (allTags.find((tag) => tag.object.sha === commit.sha)) {
           core.info('Finished fetching commits, found a tag match.')
