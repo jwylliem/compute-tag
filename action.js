@@ -93,7 +93,7 @@ async function latestTagForBranch(allTags, branch) {
     ...requestOpts,
     sha: branch,
   })
-q
+  console.log("===============================================")
   core.info(
     `Fetching commits for ref ${branch}. This may take a while on large repositories.`
   )
