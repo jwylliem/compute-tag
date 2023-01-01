@@ -102,7 +102,7 @@ async function latestTagForBranch(allTags, branch) {
     .paginate(options, (response, done) => {
       console.log("+++++++++++++++++++++++++++++++++++++++++++++++++")
       for (const commit of response.data) {
-        console.log("#############################")
+        // console.log("#############################")
         // console.log(`alltags: ${JSON.stringify(allTags)}`)
         // console.log(`commits: ${JSON.stringify(commit)}`)
         if (allTags.find((tag) => tag.object.sha === commit.sha)) {
@@ -118,7 +118,7 @@ async function latestTagForBranch(allTags, branch) {
       core.info(`Fetched ${commits.length} commits`)
       let latestTag
 
-      console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+      // console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 
       console.log(`alltags: ${JSON.stringify(allTags)}`)
       console.log(`commits: ${JSON.stringify(commits)}`)
