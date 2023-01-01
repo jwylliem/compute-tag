@@ -118,6 +118,8 @@ async function latestTagForBranch(allTags, branch) {
       core.info(`Fetched ${commits.length} commits`)
       let latestTag
 
+      console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+
       for (const commit of commits) {
         latestTag = allTags.find((tag) => tag.object.sha === commit.sha)
         if (latestTag) break
