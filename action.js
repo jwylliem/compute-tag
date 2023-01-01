@@ -196,6 +196,7 @@ function computeNextSemantic(semTag) {
       default:
         core.setFailed(
           `Unsupported semantic version type ${type}. Must be one of (${Object.values(
+
             Semantic
           ).join(', ')})`
         )
@@ -209,7 +210,7 @@ async function findMatchingLastTag(tags, branch = null) {
   if (branch) {
     const latestTag = await latestTagForBranch(tags, branch)
 
-    console.log("-------------------------------------------------------- ")
+    console.log("-------------------------------------------------------- " + latestTag)
 
     if (latestTag) {
       return latestTag.ref.replace('refs/tags/', '')
