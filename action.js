@@ -121,7 +121,7 @@ async function latestTagForBranch(allTags, branch) {
       console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 
       console.log(`alltags: ${JSON.stringify(allTags)}`)
-      console.log(`commits: ${JSON.stringify(commit)}`)
+      console.log(`commits: ${JSON.stringify(commits)}`)
 
       for (const commit of commits) {
         latestTag = allTags.find((tag) => tag.object.sha === commit.sha)
