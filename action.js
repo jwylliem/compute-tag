@@ -209,6 +209,8 @@ async function findMatchingLastTag(tags, branch = null) {
   if (branch) {
     const latestTag = await latestTagForBranch(tags, branch)
 
+    console.log("-------------------------------------------------------- ")
+
     if (latestTag) {
       return latestTag.ref.replace('refs/tags/', '')
     } else {
